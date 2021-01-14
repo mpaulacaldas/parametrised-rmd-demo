@@ -1,0 +1,30 @@
+---
+params:
+  penguin: "Adelie"
+title: "`r params$penguin`"
+output: 
+  github_document:
+    html_preview: false
+---
+
+
+```{r include = FALSE, warning = FALSE, message = FALSE}
+library(palmerpenguins)
+library(tidyverse)
+
+my_penguin <- penguins %>% 
+  filter(species == params$penguin) %>% 
+  drop_na()
+```
+
+There are `r nrow(my_penguin)` **`r params$penguin`** penguins in this dataset.
+
+```{r, echo = FALSE}
+ggplot(my_penguin, aes(flipper_length_mm, bill_length_mm)) +
+  geom_point(colour = "pink") +
+  theme_minimal() +
+  labs(x = "Flipper length (mm)", y = "Bill length (mm)")
+```
+
+
+
