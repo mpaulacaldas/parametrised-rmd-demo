@@ -8,5 +8,5 @@ The steps to take:
 And we get one report per penguin:
 
 - [Adelie](report-Adelie.md)
-- [Gento](report-Gento.md)
+- [Gentoo](report-Gentoo.md)
 - [Chinstrap](report-Chinstrap.md)
